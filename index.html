@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stake Japan - ECOSAMA Code for Free Rackback</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #111;
+            color: #fff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Background Image (F1 Car) */
+        .bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://your-f1-car-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            filter: blur(6px);
+            z-index: -1;
+        }
+
+        /* Header Styling */
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: rgba(0, 0, 0, 0.7);
+            position: relative;
+            z-index: 1;
+            animation: fadeInHeader 1s ease-out;
+        }
+
+        /* Stake Logo in the top-left corner */
+        .stake-logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100px;
+            height: auto;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+            color: #00ff00;
+            text-shadow: 0 0 15px rgba(0, 255, 0, 0.9);
+            margin-bottom: 20px;
+            animation: slideInFromTop 1.5s ease-out;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #fff;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .cta-button {
+            background-color: #00ff00;
+            color: black;
+            padding: 20px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #00cc00;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            transform: scale(1.1);
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 80px 20px;
+            text-align: center;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #00ff00;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #fff;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .feature {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            width: 250px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .feature h3 {
+            font-size: 1.6rem;
+            color: #00ff00;
+            margin-bottom: 15px;
+        }
+
+        .feature p {
+            font-size: 1rem;
+            color: #fff;
+            line-height: 1.5;
+        }
+
+        .ecocama-section {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 50px;
+            text-align: center;
+            margin-top: 50px;
+            border-radius: 15px;
+        }
+
+        .ecocama-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #00ff00;
+        }
+
+        .ecocama-section p {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .ecocama-code {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #fffa00;
+            background-color: #333;
+            padding: 15px 40px;
+            border-radius: 10px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .ecocama-code:hover {
+            background-color: #444;
+        }
+
+        /* Twitter Section */
+        .twitter-section {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 50px;
+            text-align: center;
+            margin-top: 50px;
+            border-radius: 15px;
+        }
+
+        .twitter-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #00ff00;
+        }
+
+        .twitter-profile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .twitter-profile img {
+            width: 120px;
+            border-radius: 50%;
+        }
+
+        .twitter-profile a {
+            font-size: 1.2rem;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid #00ff00;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: background-color 0.3s;
+        }
+
+        .twitter-profile a:hover {
+            background-color: #00cc00;
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: #00ff00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromTop {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInHeader {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg"></div>
+
+    <header>
+        <!-- Stake Logo -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Stake.com_logo.svg/2560px-Stake.com_logo.svg.png" alt="Stake Logo" class="stake-logo">
+        <h1>Unlock Free Money on Every Bet with the Best Stake Code 'ECOSAMA'!</h1>
+        <p>Sign up using my exclusive code for Stake Japan and start earning rackback immediately. Let’s go full throttle!</p>
+        <a href="https://bit.ly/438GjNy" class="cta-button">Sign Up Now for Free Rackback</a>
+    </header>
+
+    <section class="section">
+        <h2>How It Works</h2>
+        <p>Get free rackback with every bet you make, instantly! Simply use my code during signup to unlock these amazing rewards.</p>
+        <a href="https://bit.ly/438GjNy" class="cta-button">Start Earning Now!</a>
+    </section>
+
+    <section class="section">
+        <h2>Why Choose My Code?</h2>
+        <p>My code gives you exclusive access to the best rackback deals for Stake Japan. You get free money every time you bet, just like a pit stop!</p>
+
+        <div class="features">
+            <div class="feature">
+                <h3>Exclusive Rackback</h3>
+                <p>Earn money on every single bet you make. No limits, no hassle.</p>
+            </div>
+            <div class="feature">
+                <h3>Instant Earnings</h3>
+                <p>Your rackback is applied instantly to your account. No waiting!</p>
+            </div>
+            <div class="feature">
+                <h3>Fast Withdrawals</h3>
+                <p>Cash out your winnings quickly and easily whenever you want.</p>
+            </div>
+        </div>
+    </section>
+    <section class="twitter-section">
+        <h2>Follow Me on Twitter</h2>
+        <div class="twitter-profile">
+            <img src="https://pbs.twimg.com/profile_images/1892906625398124545/dWDRqmR6_400x400.jpg" alt="Twitter Profile Picture">
+            <a href="https://x.com/616019" target="_blank">Follow @616019</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Best Stake Japan Code | <a href="https://bit.ly/438GjNy">Sign Up Now!</a></p>
+    </footer>
+
+</body>
+</html>
