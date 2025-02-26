@@ -53,7 +53,7 @@
         }
 
         header h1 {
-            font-size: 4rem;
+            font-size: 3rem;
             font-weight: bold;
             letter-spacing: 3px;
             color: #00ff00;
@@ -63,7 +63,7 @@
         }
 
         header p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 30px;
             color: #fff;
             animation: fadeIn 2s ease-out;
@@ -276,6 +276,66 @@
                 opacity: 1;
             }
         }
+
+        /* Mobile Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .cta-button {
+                font-size: 1rem;
+                padding: 15px 30px;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .feature {
+                width: 200px;
+                padding: 20px;
+            }
+
+            .ecocama-code {
+                font-size: 2rem;
+                padding: 10px 30px;
+            }
+
+            .twitter-profile img {
+                width: 100px;
+            }
+
+            footer {
+                padding: 20px;
+            }
+        }
+
+        /* Small mobile screens */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .cta-button {
+                font-size: 1rem;
+                padding: 12px 25px;
+            }
+
+            .feature {
+                width: 150px;
+                padding: 15px;
+            }
+
+            .ecocama-code {
+                font-size: 1.8rem;
+                padding: 10px 25px;
+            }
+
+            .twitter-profile img {
+                width: 80px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -317,6 +377,10 @@
         </div>
     </section>
 
+    <section class="ecocama-section">
+        <h2>Use ECOSAMA Code for Exclusive Rackback</h2>
+        <p>Sign up using the code <span class="ecocama-code">ECOSAMA</span> to start earning immediate rackback!</p>
+    </section>
 
     <section class="twitter-section">
         <h2>Follow Me on Twitter</h2>
